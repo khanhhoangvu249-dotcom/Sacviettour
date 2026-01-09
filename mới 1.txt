@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sắc Việt Travel | Bản sắc làm nên hành trình</title>
+  <style>
+    :root{
+      --green:#2f7d32;
+      --blue:#1e88e5;
+      --bg:#f7f9fb;
+      --dark:#0f172a;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif}
+    body{background:var(--bg);color:#333;line-height:1.6;scroll-behavior:smooth}
+    a{text-decoration:none}
+    section{padding:70px 8%}
+    h1,h2,h3{color:var(--dark)}
+
+    /* HERO */
+    .hero{
+      height:100vh;
+      background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover no-repeat;
+      position:relative;
+      display:flex;
+      align-items:center;
+      color:#fff;
+    }
+    .hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.45)}
+    .hero-content{position:relative;z-index:2;max-width:650px}
+    .hero h1{font-size:48px;margin-bottom:35px;color:#fff}
+
+    .btn{
+      display:inline-block;padding:14px 30px;border-radius:30px;font-weight:600;margin-right:15px
+    }
+    .btn-primary{background:linear-gradient(135deg,var(--green),var(--blue));color:#fff}
+    .btn-secondary{border:2px solid #fff;color:#fff}
+
+    /* ABOUT */
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:25px}
+    .stat{background:#fff;padding:22px;border-radius:14px;text-align:center}
+    .stat strong{font-size:28px;color:var(--green)}
+
+    /* GRID + CARD */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
+    .card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 8px 22px rgba(0,0,0,.08);cursor:pointer;transition:.3s}
+    .card:hover{transform:translateY(-6px)}
+    .card img{width:100%;height:180px;object-fit:cover}
+    .card .info{padding:18px}
+    .price{color:var(--blue);font-weight:700;margin:8px 0}
+
+    /* OFFERS */
+    .offers{background:linear-gradient(135deg,var(--green),var(--blue));color:#fff;text-align:center}
+
+    /* TESTIMONIALS */
+    .testi{background:#fff;padding:25px;border-radius:16px}
+    .stars{color:#facc15}
+
+    /* FORM */
+    form{max-width:520px;margin:auto;background:#fff;padding:30px;border-radius:18px;display:grid;gap:15px}
+    input,select{padding:14px;border-radius:10px;border:1px solid #ccc}
+
+    footer{background:#020617;color:#fff;text-align:center;padding:40px}
+
+    /* MODAL */
+    .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:999;align-items:center;justify-content:center}
+    .modal-box{background:#fff;max-width:650px;width:90%;border-radius:18px;padding:30px;position:relative}
+    .close{position:absolute;top:14px;right:18px;cursor:pointer;font-size:22px}
+
+    @media(max-width:768px){
+      .about{grid-template-columns:1fr}
+      .hero h1{font-size:34px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Bản sắc làm nên hành trình</h1>
+    <a href="#form" class="btn btn-primary">Đăng ký tư vấn</a>
+    <a href="#featured" class="btn btn-secondary">Xem lịch trình</a>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section style="background:#ffffff">
+  <h2>Lý do bạn nên đồng hành cùng chúng tôi</h2>
+  <div class="grid">
+    <div class="card"><div class="info"><h3>Lịch trình linh hoạt</h3><p>Thiết kế đa dạng, phù hợp nhân viên văn phòng, gia đình và nhóm nhỏ.</p></div></div>
+    <div class="card"><div class="info"><h3>Hướng dẫn chuyên nghiệp</h3><p>Đội ngũ HDV giàu kinh nghiệm, thân thiện và được cấp thẻ hành nghề.</p></div></div>
+    <div class="card"><div class="info"><h3>Trải nghiệm chất lượng</h3><p>Ưu tiên chiều sâu văn hóa, nghỉ dưỡng thoải mái và trải nghiệm trọn vẹn.</p></div></div>
+    <div class="card"><div class="info"><h3>Giá trị xứng đáng</h3><p>Giá cạnh tranh, minh bạch, nhiều ưu đãi cho khách hàng thân thiết.</p></div></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section>
+  <h2>Về Sắc Việt Travel</h2>
+  <div class="about">
+    <div>
+      <p>Sắc Việt Travel ra đời với sứ mệnh tạo nên những hành trình mang đậm bản sắc Việt, kết hợp chiều sâu văn hóa, trải nghiệm bền vững và dịch vụ du lịch chất lượng cao.</p>
+      <p>Chúng tôi tập trung vào du lịch có trách nhiệm, thiết kế tour phù hợp cho nhân viên văn phòng, gia đình và nhóm nhỏ.</p>
+      <ul>
+        <li>Đội ngũ thiết kế tour giàu kinh nghiệm</li>
+        <li>Hướng dẫn viên chuyên nghiệp, có thẻ hành nghề</li>
+        <li>Bộ phận chăm sóc khách hàng tận tâm</li>
+      </ul>
+      <div class="stats">
+        <div class="stat"><strong>8+</strong><br/>Năm kinh nghiệm</div>
+        <div class="stat"><strong>5.000+</strong><br/>Khách hàng</div>
+        <div class="stat"><strong>98%</strong><br/>Hài lòng</div>
+      </div>
+    </div>
+    <img src="https://images.unsplash.com/photo-1528127269322-539801943592" style="width:100%;border-radius:18px" />
+  </div>
+</section>
+
+<!-- FEATURED TOURS -->
+<section id="featured" style="background:#f8fafc">
+  <h2>Tour nổi bật</h2>
+  <div class="grid">
+    <div class="card" onclick="openTour('Phú Quốc 3N2Đ','Nghỉ dưỡng resort 4–5★, cáp treo Hòn Thơm, Grand World','6.990.000 VNĐ')"><img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a"><div class="info"><h3>Phú Quốc 3N2Đ</h3><p class="price">Từ 6.990.000 VNĐ</p><span class="btn btn-primary">Đặt tour</span></div></div>
+    <div class="card" onclick="openTour('Đà Lạt 4N3Đ','Thành phố ngàn hoa, check-in cảnh đẹp cao nguyên','5.490.000 VNĐ')"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"><div class="info"><h3>Đà Lạt 4N3Đ</h3><p class="price">Từ 5.490.000 VNĐ</p><span class="btn btn-primary">Đặt tour</span></div></div>
+    <div class="card" onclick="openTour('Nha Trang 3N2Đ','Biển xanh, VinWonders, tour đảo','6.290.000 VNĐ')"><img src="https://images.unsplash.com/photo-1494475673543-6a6a27143b16"><div class="info"><h3>Nha Trang 3N2Đ</h3><p class="price">Từ 6.290.000 VNĐ</p><span class="btn btn-primary">Đặt tour</span></div></div>
+    <div class="card" onclick="openTour('Thái Lan 5N4Đ','Bangkok – Pattaya, chùa vàng, show nghệ thuật','9.990.000 VNĐ')"><img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def"><div class="info"><h3>Thái Lan 5N4Đ</h3><p class="price">Từ 9.990.000 VNĐ</p><span class="btn btn-primary">Đặt tour</span></div></div>
+    <div class="card" onclick="openTour('Singapore – Malaysia 5N4Đ','Merlion, động Batu, đô thị hiện đại','13.900.000 VNĐ')"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c"><div class="info"><h3>Singapore – Malaysia</h3><p class="price">Từ 13.900.000 VNĐ</p><span class="btn btn-primary">Đặt tour</span></div></div>
+    <div class="card" onclick="openTour('Hàn Quốc 6N5Đ','Seoul – đảo Nami – mua sắm','18.900.000 VNĐ')"><img src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c"><div class="info"><h3>Hàn Quốc 6N5Đ</h3><p class="price">Từ 18.900.000 VNĐ</p><span class="btn btn-primary">Đặt tour</span></div></div>
+  </div>
+</section>
+
+<!-- TOUR NOI DIA -->
+<section>
+  <h2>Tour du lịch nội địa</h2>
+  <div class="grid">
+    <div class="card" onclick="openTour('Phú Quốc 3N2Đ','Biển đảo nghỉ dưỡng, resort cao cấp','6.990.000 VNĐ')"><img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a"><div class="info"><h3>Phú Quốc 3N2Đ</h3><p class="price">6.990.000 VNĐ</p><span class="btn btn-primary">Đặt tour</span></div></div>
+    <div class="card" onclick="openTour('Đà Nẵng – Hội An 4N3Đ','Biển Mỹ Khê – Phố cổ Hội An','6.490.000 VNĐ')"><img src="https://images.unsplash.com/photo-1526481280691-9065b0b5c8b6"><div class="info"><h3>Đà Nẵng – Hội An 4N3Đ</h3><p class="price">6.490.000 VNĐ</p><span class="btn btn-primary">Đặt tour</span></div></div>
+    <div class="card" onclick="openTour('Đà Lạt 4N3Đ','Khí hậu mát mẻ, cảnh đẹp cao nguyên','5.490.000 VNĐ')"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"><div class="info"><h3>Đà Lạt 4N3Đ</h3><p class="price">5.490.000 VNĐ</p><span class="btn btn-primary">Đặt tour</span></div></div>
+    <div class="card" onclick="openTour('Nha Trang 3N2Đ','Tour đảo – VinWonders','6.290.000 VNĐ')"><img src="https://images.unsplash.com/photo-1494475673543-6a6a27143b16"><div class="info"><h3>Nha Trang 3N2Đ</h3><p class="price">6.290.000 VNĐ</p><span class="btn btn-primary">Đặt tour</span></div></div>
+    <div class="card" onclick="openTour('Quy Nhơn – Phú Yên 4N3Đ','Biển hoang sơ – thiên nhiên','6.790.000 VNĐ')"><img src="https://images.unsplash.com/photo-1599707254554-027aeb4deacd"><div class="info"><h3>Quy Nhơn – Phú Yên</h3><p class="price">6.790.000 VNĐ</p><span class="btn btn-primary">Đặt tour</span></div></div>
+    <div class="card" onclick="openTour('Hà Nội – Ninh Bình – Hạ Long 4N3Đ','Di sản – danh thắng miền Bắc','7.490.000 VNĐ')"><img src="https://images.unsplash.com/photo-1504457047772-27faf1c00561"><div class="info"><h3>HN – NB – HL 4N3Đ</h3><p class="price">7.490.000 VNĐ</p><span class="btn btn-primary">Đặt tour</span></div></div>
+  </div>
+</section>
+
+<!-- TOUR QUOC TE -->
+<section style="background:#f8fafc">
+  <h2>Tour du lịch quốc tế</h2>
+  <div class="grid">
+    <div class="card" onclick="openTour('Thái Lan 5N4Đ','Bangkok – Pattaya – chùa vàng','9.990.000 VNĐ')"><img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def"><div class="info"><h3>Thái Lan 5N4Đ</h3><p class="price">9.990.000 VNĐ</p><span class="btn btn-primary">Đặt tour</span></div></div>
+    <div class="card" onclick="openTour('Singapore – Malaysia 5N4Đ','Du lịch đô thị hiện đại','13.900.000 VNĐ')"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c"><div class="info"><h3>Singapore – Malaysia</h3><p class="price">13.900.000 VNĐ</p><span class="btn btn-primary">Đặt tour</span></div></div>
+    <div class="card" onclick="openTour('Hàn Quốc 6N5Đ','Seoul – đảo Nami','18.900.000 VNĐ')"><img src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c"><div class="info"><h3>Hàn Quốc 6N5Đ</h3><p class="price">18.900.000 VNĐ</p><span class="btn btn-primary">Đặt tour</span></div></div>
+    <div class="card" onclick="openTour('Nhật Bản 6N5Đ','Hoa anh đào – văn hoá Nhật','26.900.000 VNĐ')"><img src="https://images.unsplash.com/photo-1549693578-d683be217e58"><div class="info"><h3>Nhật Bản 6N5Đ</h3><p class="price">26.900.000 VNĐ</p><span class="btn btn-primary">Đặt tour</span></div></div>
+    <div class="card" onclick="openTour('Trung Quốc 5N4Đ','Thượng Hải – Hàng Châu','15.900.000 VNĐ')"><img src="https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b"><div class="info"><h3>Trung Quốc 5N4Đ</h3><p class="price">15.900.000 VNĐ</p><span class="btn btn-primary">Đặt tour</span></div></div>
+    <div class="card" onclick="openTour('Châu Âu 10N9Đ','Pháp – Ý – Thuỵ Sĩ','89.000.000 VNĐ')"><img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34"><div class="info"><h3>Châu Âu 10N9Đ</h3><p class="price">89.000.000 VNĐ</p><span class="btn btn-primary">Đặt tour</span></div></div>
+  </div>
+</section>
+
+<!-- OFFERS -->
+<section class="offers">
+  <h2>Ưu đãi đang áp dụng</h2>
+  <p>✔ Giảm 5–10% cho nhóm từ 5 người<br/>✔ Ưu đãi khách đặt sớm<br/>✔ Combo tour + khách sạn 4–5★</p>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <h2>Khách hàng nói gì?</h2>
+  <div class="grid">
+    <div class="testi"><div class="stars">★★★★★</div><p>Tour tổ chức chuyên nghiệp, đúng cam kết.</p><strong>– Anh Tuấn</strong></div>
+    <div class="testi"><div class="stars">★★★★★</div><p>Gia đình tôi rất hài lòng, HDV nhiệt tình.</p><strong>– Chị Hạnh</strong></div>
+    <div class="testi"><div class="stars">★★★★★</div><p>Dịch vụ tốt, sẽ tiếp tục ủng hộ.</p><strong>– Anh Minh</strong></div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section id="form" style="background:#f8fafc">
+  <h2>Nhận tư vấn miễn phí</h2>
+  <form>
+    <input type="text" placeholder="Họ và tên" required>
+    <input type="tel" placeholder="Số điện thoại" required>
+    <select id="tourSelect"><option>Tour quan tâm</option></select>
+    <button class="btn btn-primary">Gửi yêu cầu</button>
+  </form>
+</section>
+
+<footer>
+  <p><strong>Sắc Việt Travel</strong></p>
+  <p>Hotline: 1900 6789 | Email: info@sacviettravel.vn</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <span class="close" onclick="closeModal()">✕</span>
+    <h3 id="modalTitle"></h3>
+    <p id="modalDesc"></p>
+    <p class="price" id="modalPrice"></p>
+    <a href="#form" class="btn btn-primary" onclick="closeModal()">Đăng ký tư vấn tour này</a>
+  </div>
+</div>
+
+<script>
+  function openTour(title,desc,price){
+    document.getElementById('modalTitle').innerText=title;
+    document.getElementById('modalDesc').innerText=desc;
+    document.getElementById('modalPrice').innerText='Giá từ: '+price;
+    document.getElementById('modal').style.display='flex';
+    document.getElementById('tourSelect').innerHTML='<option>'+title+'</option>';
+  }
+  function closeModal(){document.getElementById('modal').style.display='none'}
+</script>
+
+</body>
+</html>
